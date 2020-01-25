@@ -1,3 +1,13 @@
+// ==UserScript==
+// @name         Bloble.io Custom Skin
+// @namespace    http://tampermonkey.net/
+// @version      0.2
+// @description  Discord Server : https://discord.gg/ezPK8QN
+// @author       You
+// @match        bloble.io
+// @grant        none
+// ==/UserScript==
+
 function httpGetAsync(theUrl, callback) { //theURL or a path to file
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function() {
@@ -15,4 +25,11 @@ function httpGetAsync(theUrl, callback) { //theURL or a path to file
 
 httpGetAsync('http://..... or fetch a file', function(data) {
     //do something with your data
-});
+})
+
+function httpGet(theUrl) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
